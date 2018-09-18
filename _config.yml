@@ -1,0 +1,138 @@
+#
+# This file contains configuration flags to customize your site
+#
+
+# Name of your site (displayed in the header)
+name: bilog
+# Tile of defaul
+title: bilog
+# Short bio or description (displayed in the header)
+description: log your mind
+
+# URL of your avatar or profile pic (you could use your GitHub profile pic)
+#https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png
+
+#avatar: https://raw.githubusercontent.com/tahongtrung/bilog/master/avt.png?token=AIk2nrD3IC1GGGzlcYZ-rIZoPE6-eWTkks5bDtjawA%3D%3D
+avatar: https://i.imgur.com/phSDNle.jpg
+#
+# Flags below are optional
+#
+footer-v2: true
+show_excerpts: true
+#excerpt_separator: "<!-- more -->"
+# Includes an icon in the footer for each username you enter
+footer-links:
+  dribbble:
+  email: #trung2nd@gmail.com
+  facebook: bilogvn
+  flickr:
+  github: trung2nd
+  instagram:
+  linkedin:
+  pinterest:
+  rss: # just type anything here for a working RSS icon
+  twitter: tahongtrung
+  stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
+  youtube: # channel/<your_long_string> or user/<user-name>
+  googleplus: # anything in your profile username that comes after plus.google.com/
+
+tag_page: '/tags/'
+category_page: '/categories/'
+# Enter your Disqus shortname (not your username) to enable commenting on posts
+# You can find your shortname on the Settings page of your Disqus account
+disqus:
+
+# Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
+google_analytics:
+
+# Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
+# Used for Sitemap.xml and your RSS feed
+
+#########for production############################
+url: 'https://trung2nd.github.io/bilog'
+baseurl: 'https://trung2nd.github.io/bilog'
+paginate_path: '/page:num'
+############ end for production ###################
+#paginate_path: '/bilog/page:num/'
+
+# If you're hosting your site at a Project repository on GitHub pages
+# (http://yourusername.github.io/repository-name)
+# and NOT your User repository (http://yourusername.github.io)
+# then add in the baseurl here, like this: "/repository-name"
+
+#################for development##################
+#url:
+#baseurl:
+################# End for development #############
+# !! You don't need to change any of the configuration flags below !!
+#
+#future: true
+#published: false
+
+
+permalink: /:title/
+
+# The release of Jekyll Now that you're using
+version: v3.7.3
+
+# Jekyll 3 now only supports Kramdown for Markdown
+#kramdown
+#markdown:
+#  # Use GitHub flavored markdown, including triple backtick fenced code blocks
+#  input: GFM
+#  # Jekyll 3 and GitHub Pages now only support rouge for syntax highlighting
+#  syntax_highlighter: rouge
+#  syntax_highlighter_opts:
+#    # Use existing pygments syntax highlighting css
+#    css_class: 'highlight'
+#markdown: kramdown
+#kramdown:
+#  input: GFM
+#  hard_wrap: false
+#highlighter: rouge
+#markdown: rdiscount
+markdown: kramdown
+#markdown: redcarpet
+#redcarpet:
+#  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
+#debug: true
+#paginate
+paginate: 5
+# Set the Sass partials directory, as we're using @imports
+sass:
+  style: :expanded # You might prefer to minify using :compressed
+
+
+# Use the following plug-ins
+plugins:
+- jekyll-sitemap
+- jekyll-feed
+- jekyll-paginate
+- jemoji
+#- jekyll-emoji
+- gemoji
+#emoji_dir: images/emoji
+emoji_dir: "/sachingpta.gitlab.io/assets/images/emoji"
+# graphics/emojis/simple_smile.png | graphics/emojis/bowtie.png
+# https://www.webpagefx.com/tools/emoji-cheat-sheet/graphics/emojis/
+#emoji_dir: "https://www.webpagefx.com/tools/emoji-cheat-sheet/graphics/emojis"
+
+jekyll-archives:
+  enabled: []
+  layout: 'archive'
+  permalinks:
+    year: '/:year/'
+    month: '/:year/:month/'
+    day: '/:year/:month/:day/'
+    tag: '/tag/:name/'
+    category: '/category/:name/'
+# Exclude these files from your production _site
+#exclude:
+#  - Gemfile
+#  - Gemfile.lock
+#  - LICENSE
+#  - README.md
+#  - CNAME
+#--------------
+#jekll build --verbose to view build process in detail.
+
