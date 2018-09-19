@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Laravel Shared Hosting – bilog – log your mind</title>
+        <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="Vì đi support các bạn khá nhiều lỗi này và mình cũng có hứa là sẽ viết một bài để khỏi đi support dạo ...." />
+    <meta property="og:description" content="Vì đi support các bạn khá nhiều lỗi này và mình cũng có hứa là sẽ viết một bài để khỏi đi support dạo ...." />
+    
+    <meta name="author" content="bilog" />
+
+    
+    <meta property="og:title" content="Laravel Shared Hosting" />
+    <meta property="twitter:title" content="Laravel Shared Hosting" />
+    
+    
+   <meta property="og:site_name" content="https://6269.github.io" />
+   <meta property="og:type" content="bilog" />
+   <meta property="og:locale" content="vi_VN" />
+   <meta property="fb:pages" content="1882114255141464" />
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="icon" href="https://6269.github.io/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="https://6269.github.io/style.css" />
+    <link rel="stylesheet" type="text/css" href="https://6269.github.io/public/css/bilog.css" />
+    <link rel="alternate" type="application/rss+xml" title="bilog - log your mind" href="https://6269.github.io/feed.xml" />
+	<script defer type="text/javascript" src="https://6269.github.io/public/js/functions.js"></script>
+  </head>
+
+  <body class="hero-bkg-animated">
+    <div class="wrapper-masthead animate-area">
+      <div class="container">
+
+        <header class="masthead clearfix">
+          <a href="https://6269.github.io/" class="site-avatar"><img src="https://i.imgur.com/phSDNle.jpg" /></a>
+          <div class="site-info">
+            <h1 class="site-name"><a href="https://6269.github.io/">bilog</a></h1>
+            <p class="site-description">log your mind</p>
+          </div>
+          <nav>
+            <a href="https://6269.github.io/bitime">bitime</a>
+            <a href="https://6269.github.io/price">chạy xô</a>
+            <a href="https://6269.github.io/about">about</a>
+          </nav>
+        </header>
+
+      </div>
+    </div>
+
+    <div id="main" role="main" class="container">
+      <article class="post">
+  <h1>Laravel Shared Hosting</h1>
+	<span class="post-date">06 Sep 2018</span>
+   | 
+  
+    <a class="w3-tag w3-blue" style="padding:2px;border-radius: 2px;" href="https://6269.github.io/tags/#laravel" class="post-tag"><i class="fas fa-tag"></i>laravel</a>
+  
+  
+  <div class="entry">
+    <p><a target="_blank" href="https://www.kodementor.com/how-to-deploy-laravel-project-in-000webhost/">How to deploy laravel app on 000webhost</a></p>
+
+<p><img src="https://i.imgur.com/JCzgVq8.png" alt="https://www.000webhost.com" /></p>
+
+<blockquote>
+  <p>#fixbug: laravel shared host</p>
+
+  <p>Vì đi support các bạn khá nhiều lỗi này và mình cũng có hứa là sẽ viết một bài để khỏi đi support dạo nữa mà dạo này bận rộn quá nên chưa viết được nay thì viết bất chấp luôn.</p>
+</blockquote>
+
+<p>Nếu bạn đang xài VPS thì đừng làm theo cách này (đừng tự bóp  dái)</p>
+<blockquote>
+  <p>Post này cũng dành cho các host mà bạn nghĩ nó như 000webhost nói chung là <code class="highlighter-rouge">shared host</code> đó.</p>
+</blockquote>
+
+<blockquote>
+  <p>Lưu ý toàn bộ config trong file <code class="highlighter-rouge">.env</code> không có tác dụng trên shared host 000webhost này, nên khỏi up cho nhẹ host cũng được!</p>
+</blockquote>
+
+<ol>
+  <li>Nếu bạn chưa up source lên host:
+    <ul>
+      <li>Dừng server lại nha</li>
+      <li>Clear cache này nọ các kiểu nói chung là xóa sạch cache
+<code class="highlighter-rouge">php artisan config:clear</code> <code class="highlighter-rouge">php artisan cache:clear</code></li>
+      <li>Xóa thư mục chứa cache <code class="highlighter-rouge">/bootstrap/cache/*</code></li>
+      <li>Config file <code class="highlighter-rouge">.env</code> đúng với trên host thật</li>
+      <li>Rồi up lên đi. Hên xuôi à! bình thường ai ăn ở tốt thì work luôn khỏi next step 2. :D</li>
+    </ul>
+  </li>
+  <li>Nếu bạn trót dại up source lên host roài! ==’
+    <ul>
+      <li>Bật debug mode = true lên (<code class="highlighter-rouge">config/app.php</code>) chứ không phải <code class="highlighter-rouge">.env</code>
+ <img src="https://i.imgur.com/bdL9bpi.png" alt="" />
+ =&gt; Thêm như này nè <code class="highlighter-rouge">public_html/config/app.php</code></li>
+      <li>Set app key trong <code class="highlighter-rouge">config/app.php</code> luôn như đã nói ở trên <code class="highlighter-rouge">.env</code> là phế phẩm mà.
+ <img src="https://i.imgur.com/rKkXfcP.png" alt="" />
+ =&gt; nhớ copy đủ cả prefix <code class="highlighter-rouge">base:64...</code></li>
+      <li>Cấu hình database trong <code class="highlighter-rouge">config/database.php</code> đa số xài mysql thì config như sau
+ <img src="https://i.imgur.com/g1IUDcQ.png" alt="" />
+ =&gt; lưu ý có 1 option <code class="highlighter-rouge">'options'   =&gt; [PDO::ATTR_EMULATE_PREPARES =&gt; true]</code> cực kì quan trọng nhớ thêm vào</li>
+    </ul>
+  </li>
+  <li>
+    <p>Phương pháp ăn liền gặp đâu đái đấy! nhầm,, xử đấy.
+ <img src="https://i.imgur.com/bifHN3c.png" alt="" />
+ =&gt; Thử gõ thêm <code class="highlighter-rouge">/public/</code> phía sau url xem nếu work thì copy 2 file <code class="highlighter-rouge">index.php</code> và <code class="highlighter-rouge">.htaccess</code> ra ngoài.
+ =&gt; bonus: nếu lười có thể copy 2 file đấy ở này <a href="https://gist.github.com/trung2nd/9f4cbe15ca971433fa4ba89b671eff3a" target="_blank">.htaccess</a> <a href="https://gist.github.com/trung2nd/0b00b5f2753318558c7cd521fbbfb424" target="_blank">index.php</a></p>
+
+    <p><img src="https://i.imgur.com/LJtSv7S.png" alt="" />
+ =&gt; Thêm <code class="highlighter-rouge">/public/</code> phía sau mà ra này thì chịu luôn. Nói chớ bật debug mode = true lên giùm cái chứ sao mà biết nó lỗi gì!</p>
+
+    <p><img src="https://i.imgur.com/scqKYXR.png" alt="" />
+ =&gt; Chưa set app key trong <code class="highlighter-rouge">config/app.php</code></p>
+
+    <p><img src="https://i.imgur.com/1bqLuXo.png" alt="" />
+ =&gt; Chưa config/config sai database trong <code class="highlighter-rouge">config/database.php</code></p>
+
+    <p><img src="https://i.imgur.com/hdWlHs5.png" alt="" />
+ =&gt; Thiếu option trong config db <code class="highlighter-rouge">'options'   =&gt; [PDO::ATTR_EMULATE_PREPARES =&gt; true]</code></p>
+
+    <p><img src="https://i.imgur.com/xSLMLDr.png" alt="" />
+ =&gt; Chưa import data cho database.</p>
+
+    <p><img src="https://i.imgur.com/AXOJt6f.png" alt="" />
+ =&gt; các lỗi còn lại có liên quan đến thư mục <code class="highlighter-rouge">vender</code> (up thiếu file trong này rồi up lại vender thôi) hoặc syntax lạ -&gt; thường là do k tương thích phiên bản php, các bạn check bằng cách new 1 file info.php trong <code class="highlighter-rouge">public_html</code> của host rồi phpinfo làm tương tự với local của bạn check xem 2 phiên bản php có cùng nhau không hoặc bạn nâng php trên host lên hoặc hạ laravel xuống!</p>
+  </li>
+</ol>
+
+<p>Nếu có khó khăn gì trong quá trình fix bug vui lòng để lại comment để được support ^^!
+<!-- <p align="center" class="pre">
+JS can do everything but take care on how to handle exceptions in your code. Otherwise they go crazy like the panda above.
+</p> --></p>
+
+
+  </div>
+
+  <!-- <div class="date">
+    Written on September  6, 2018
+  </div> -->
+
+  
+	<div class="fb-comments" data-href="" data-width="100%" data-numposts="5"></div>
+</article>
+
+    </div>
+    <!-- animate-area  -->
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+            
+	<a target="_blank" href="https://facebook.com/bilogvn"><i style="color:#fff;" class="fab fa-facebook"></i></i></a>
+	<a target="_blank" href="https://github.com/trungx"><i style="color:#fff;" class="fab fa-github"></i></i></a>
+	<a target="_blank" href="https://twitter.com/tahongtrung"><i style="color:#fff;" class="fab fa-twitter"></i><a>
+	<a target="_blank" href="https://tumblr.com/tahongtrung"><i style="color:#fff;" class="fab fa-tumblr"></i><a>
+
+
+<br />
+<br />
+<br />
+<a target="_blank" rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a>
+
+        </footer>
+      </div>
+      
+    </div>
+		
+    
+
+		
+		<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-chevron-up"></i></button>
+		<a href="https://github.com/you"><img style="position: fixed; bottom: 0; left: 0; border: 0;" src="https://i.imgur.com/muAUuRV.png" alt="Quảng cáo"></a>
+		<div id="fb-root"></div>
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      
+		<div id="fb-root"></div>
+		<script defer>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+
+		<div class="fb-customerchat"
+			minimized="true"
+		  	attribution=setup_tool
+		  	page_id="1882114255141464"
+		  	theme_color="#67b868">
+		</div>
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </body>
+</html>
